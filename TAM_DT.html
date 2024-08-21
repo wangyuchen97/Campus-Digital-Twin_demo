@@ -1,0 +1,1908 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <link href="css/BigData.css" rel="stylesheet" type="text/css" />
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+    <link href="css/index01.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.js"></script>
+    <link href="js/bstable/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="js/bstable/css/bootstrap-table.css" rel="stylesheet" type="text/css" />
+    <link href="css/Security_operation.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="js/artDialog/skins/default.css" type="text/css"/>
+    <script src="js/laydate.js"></script>
+    <script src="js/Home_page.js"></script>
+    <meta charset="UTF-8">
+    <title>Texas A&M Digital Twin</title>
+
+</head>
+<body >
+
+<div class="data_bodey">
+    <!-- 主页面和分页面以及小搜索框 -->
+    <div class="index_nav" >
+        <ul style="height: 30px; margin-bottom: 0px;">
+            <li class="l_left total_chose_fr nav_active" style="font-size: 15px;">HOME</li>
+            <li class="l_left total_chose_pl" style="font-size: 15px;" >BUILDINGS</li>
+            <li class="l_left total_chose_pl" style="font-size: 15px;">ENVIRONMENT</li>
+            <li class="r_right total_chose_pl" style="font-size: 15px;">SCORECARD</li>
+            <li class="r_right total_chose_pl" style="font-size: 15px;">ENERGY</li>
+            <li class="r_right total_chose_pl" style="font-size: 15px;">TRANSPORTATION</li>
+        </ul>
+        <div class="total_chose_box" style="display: none;">
+            <div style="height: 32px;"></div>
+            <span class="chose_tltle">Year: </span>
+            <select class="year_chose">
+                <option>2024</option>
+                <option>2023</option>
+                <option>2022</option>
+                <option>2021</option>
+                <option>2020</option>
+                <option>Pre2025</option>
+                <option>Pre2026</option>
+                <option>Pre2027</option>
+                <option>Pre2028</option>
+            </select>
+            <span class="chose_tltle">Month: </span>
+            <select class="year_chose">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+            </select>
+            <span class="chose_tltle">Area: </span>
+            <select class="year_chose2">
+                <option>South District</option>
+                <option>North District</option>
+                <option>East District</option>
+                <option>West District</option>
+            </select>
+            <button class="chose_enter">OK</button>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="index_tabs" >
+        <!--校园指标监测页面-->
+        <div class="inner" style="height: 109%;">
+
+            <div class="left_cage">
+                <div class="dataAllBorder01 cage_cl" style="margin-top: 9% !important; height: 24%;">
+                    <video autoplay="autoplay" loop="loop" muted="muted" controls="controls" class="dataAllBorder02 video_cage">
+                        <source class="video" title="校园数字孪生鸟瞰宣传视频" src="video/test_mv.mp4"/>
+                    </video>
+                </div>
+                <div class="dataAllBorder01 cage_cl" style="margin-top: 1.5% !important; height: 38%;">
+                    <div class="dataAllBorder02 video_cage">
+                        <img class="video_around video_around_chose" title="Building real-time monitoring" src="video/video4.jpg">
+                        <img class="video_around" title="Environment real-time monitoring" src="video/video5.jpg">
+                        <img class="video_around" title="Transportation real-time monitoring" src="video/video3.jpg">
+                        <img class="video_around" title="Energy real-time monitoring" src="video/video7.jpg">
+                    </div>
+                </div>
+                <div class="dataAllBorder01 cage_cl" style="margin-top: 1.5% !important; height: 32%; position: relative;">
+                    <div class="dataAllBorder02" style="padding: 1.2%; overflow: hidden">
+
+                        <div class="message_scroll_box">
+                            <div class="message_scroll">
+                            <div class="scroll_top">
+                                <span class="scroll_title">Buildings</span>
+                                <span class="scroll_level scroll_level01">Warning</span>
+                                <a class="localize"></a>
+                                <span class="scroll_timer">24-08-13/9:52</span>
+                            </div>
+                            <div class="msg_cage">
+                                <a class="localize_title">Download Related Videos and Data</a>
+                            </div>
+                            <div class="msg_cage">
+                                <a class="localize_msg">The peeling of the building surface</a>
+                            </div>
+                        </div>
+                            <div class="message_scroll">
+                                <div class="scroll_top">
+                                    <span class="scroll_title">Environment</span>
+                                    <span class="scroll_level scroll_level03">Warning</span>
+                                    <a class="localize"></a>
+                                    <span class="scroll_timer">24-08-13/10:21</span>
+                                </div>
+                                <div class="msg_cage">
+                                    <a class="localize_title">Download Related Videos and Data</a>
+                                </div>
+                                <div class="msg_cage">
+                                    <a class="localize_msg">Water pollution index exceeds standard</a>
+                                </div>
+                            </div>
+                            <div class="message_scroll">
+                                <div class="scroll_top">
+                                    <span class="scroll_title">Transportation</span>
+                                    <span class="scroll_level scroll_level02">Warning</span>
+                                    <a class="localize"></a>
+                                    <span class="scroll_timer">24-08-13/11:36</span>
+                                </div>
+                                <div class="msg_cage">
+                                    <a class="localize_title">Download Related Videos and Data</a>
+                                </div>
+                                <div class="msg_cage">
+                                    <a class="localize_msg">Wellborn road congestion </a>
+                                </div>
+                            </div>
+                            <div class="message_scroll">
+                                <div class="scroll_top">
+                                    <span class="scroll_title">Energy</span>
+                                    <span class="scroll_level scroll_level01">Warning</span>
+                                    <a class="localize"></a>
+                                    <span class="scroll_timer">24-08-13/11:50</span>
+                                </div>
+                                <div class="msg_cage">
+                                    <a class="localize_title">Download Related Videos and Data</a>
+                                </div>
+                                <div class="msg_cage">
+                                    <a class="localize_msg">Henderson Hall's electricity usage is over</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="scroll_tool_outbox">
+                        <div class="scroll_tool_box">
+                            <a class="scroll_tool" href="#">History</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="center_cage">
+                <div class="dataAllBorder01 cage_cl" style="margin-top: 3.5% !important; height: 62.7%; position: relative;">
+                    <div class="dataAllBorder02" style="position: relative; overflow: hidden;">
+                        <!--标题栏-->
+                        <!-- <div class="map_title_box" style="height: 0%">
+                            <div class="map_title_innerbox">
+                                <div class="map_title"> </div>
+                            </div>
+                        </div> -->
+                        <div class="map" id="map"  ></div>
+                        <!--地图显示信息选择-->
+                        <div class="display_type_box display_box" style="display: none;overflow:auto">
+                            <div class="display_type_center_box">
+                                <ul class="display_type_inner_box" id="layerList">
+                                    <li class="display_type_msg"><input  id="Add-Stops" type="checkbox" class="display_type_chose"/>Campus Bus Stops</li>                                    
+                                    <li class="display_type_msg"><input id="zt_4" type="checkbox" class="display_type_chose"/> Teaching building</li>
+                                    <li class="display_type_msg"><input  id="zt_1" type="checkbox" class="display_type_chose"/>Library</li>
+                                    <li class="display_type_msg"><input  id="zt_5" type="checkbox" class="display_type_chose"/>Dining</li>
+                                    <li class="display_type_msg"><input  id="zt_6" type="checkbox" class="display_type_chose"/>Stadium</li>
+                                    <li class="display_type_msg"><input  id="zt_2" type="checkbox" class="display_type_chose"/>Office building</li>
+                                    <li class="display_type_msg"><input  id="zt_0" type="checkbox" class="display_type_chose"/>Parking</li>
+                                    <li class="display_type_msg"><input  id="zt_3" type="checkbox" class="display_type_chose"/>Emergency Phones</li>
+                                    <li class="display_type_msg"><input  id="zt_7" type="checkbox" class="display_type_chose"/>Store</li>
+
+
+                                </ul>
+                            </div>
+                            <div class="display_type_funct_box">
+                                <span class="display_type_funct display_type_funct_sure">OK</span>
+                            </div>
+                        </div>
+                        <!--校园分区选择-->
+                        <div class="city_chose_box display_box" style="display: none">
+                            <div class="display_type_center_box">
+                                <ul class="display_type_inner_box" id="ulCity">
+                                    <li class="display_type_msg">Navigation Module</li>
+                                    <li class="display_type_msg">******</li>
+                                    <li class="display_type_msg">Origin:</li>
+                                    <li class="display_type_msg">__________</li>
+                                    <li class="display_type_msg">Destination:</li>
+                                    <li class="display_type_msg">__________</li>
+                                    <li class="display_type_msg">Route:</li>
+                                    <li class="display_type_msg">__________</li>
+                                </ul>
+                            </div>
+                            <div class="display_type_funct_box">
+                                <span class="display_type_funct display_type_funct_sure">OK</span>
+                            </div>
+                        </div>
+                        <!-- 可持续性得分表的可视化
+                        <div class="city_chose_box display_box" style="display: none">
+                            <div class="display_type_center_box2">
+                                <ul class="display_type_inner_box2" id="ulCity2">
+                                    <li class="display_type_msg">1.Policy Score Map</li>
+                                    <li class="display_type_msg">*</li>
+                                    <li class="display_type_msg">2.Sustainability Map</li>
+                                    <li class="display_type_msg">*</li>
+                                </ul>
+                            </div>
+                            <div class="display_type_funct_box">
+                                <span class="display_type_funct display_type_funct_sure">OK</span>
+                            </div>
+                        </div> -->
+                        <!--轨迹回放-->
+                        <div class="trajectory_box" style="display: none" id="divRouteReview">
+                            <input class="trajectory" id="start" placeholder="开始时间">
+                            <input class="trajectory" id="end"  placeholder="结束时间">
+                            <select class="ratio">
+                                <option>1倍</option>
+                                <option>2倍</option>
+                                <option>3倍</option>
+                            </select>
+                            <button class="playback" onclick="showRoute()">回放</button>
+                            <button class="playback close_playback">关闭</button>
+                        </div>
+                        缓冲区设置
+                        <div class="trajectory_box" style="display: none" id="divBufferSetting">
+                            <button class="playback" style="width:60px" onclick="setBufferCenter()">Point</button>
+                            <input class="trajectory" id="txtBufferX" placeholder="X">
+                            <input class="trajectory" id="txtBufferY" placeholder="Y">
+                            <input value="10" class="trajectory" id="txtBufferDis" placeholder="Distance">
+                            <select class="ratio">
+                                <option>m</option>
+                                <option>km</option>
+                            </select>
+                            <button class="playback"  onclick="executeBuffer();edit()" style="width:60px">Analysis</button>
+                            <button class="playback close_playback">Close</button>
+                        </div>
+
+                        <!--地图工具栏-->
+                        <div class="map_tool_outbox">
+                            <span class="map_tool" onclick="toggleFullscreen()">
+                                    <a class="map_tool_inner" title="zoom full" ></a>
+                            </span>
+                            <span class="map_tool" onclick="zoomIn()">
+                                    <a class="map_tool_inner" title="Zoom in" style="background-position-x:-36px"></a>
+                                </span>
+                            <span class="map_tool" onclick="zoomOut()">
+                                    <a class="map_tool_inner" title="Zoom out" style="background-position-x:-72px"></a>
+                                </span>
+                            <span class="map_tool" id="Model3D">
+                                    <a class="map_tool_inner" title="3D Model" style="background-position-x:-108px"></a>
+                                </span>
+                            <span class="map_tool">
+                                    <a class="map_tool_inner display_type_btn" title="Thematic map" style="background-position-x:-144px"></a>
+                                </span>
+                            <span class="map_tool" id="heatmap">
+                                    <a class="map_tool_inner" title="Heat map" style="background-position-x:-180px"></a>
+                                </span>
+                            <span class="map_tool" id="btnBuffer">
+                                    <a class="map_tool_inner" title="Buffer analysis" style="background-position-x:-216px"></a>
+                                </span>
+                            <span class="map_tool">
+                                    <a class="map_tool_inner addition_check_btn check_btn" title="Address Search" style="background-position-x:-252px"></a>
+                                </span>
+                            <span class="map_tool">
+                                    <a class="map_tool_inner chemistry_check_btn check_btn" onclick="chemistryCheck()" title="Laboratory Search" style="background-position-x:-288px"></a>
+                                </span>
+                            <span class="map_tool">
+                                    <a class="map_tool_inner enterprise_check_btn check_btn" onclick="enterpriseCheck()" title="Teaching building Search" style="background-position-x:-324px"></a>
+                                </span>
+                            <span class="map_tool">
+                                    <a class="map_tool_inner car_check_btn check_btn" onclick="carCheck()" title="Vehicle Search" style="background-position-x:-360px"></a>
+                                </span>
+                            <span class="map_tool" id= "Roadcon">
+                                    <a class="map_tool_inner"  title="Road congestion"  style="background-position-x:-396px"></a>
+                                </span>
+                            <span class="map_tool">
+                                    <a class="map_tool_inner city_chose_btn"  title="Navigation" style="background-position-x:-432px"></a>
+                                </span>
+                            <span class="map_tool">
+                                    <a class="map_tool_inner"  title="Scorecard" style="background-position-x:-468px"></a>
+                                </span>
+                            <span class="map_tool">
+                                    <a class="map_tool_inner" onclick="cancel()" id="fresh_tool" title="Clear" style="background-position-x:-504px"></a>
+                                </span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dataAllBorder01 cage_cl" style="margin-top: 0.6% !important; height: 32.1%;">
+                    <div class="dataAllBorder02" id="map_title_innerbox">
+                        <div class="map_title_box">
+                            <div class="map_title_innerbox">
+                                <div class="map_title" style="margin-top: 1.2%">Transportation Data Monitoring</div>
+                            </div>
+                            <div >
+                                <select id="selLayer" style="width:100px; margin-top: 1.2%">
+                                    <option value="">Students</option>
+                                    <option value="">Employees</option>
+                                    <option value="">Visitors</option>
+                                    <option value="">Vendors</option>
+                                </select>
+                            </div>
+                            <div >
+                                <select id="selLayer2" style="width:150px; margin-top: 1.2%">
+                                    <option value="">George Bush Dr W</option>
+                                    <option value="">Raymond Stotzer</option>
+                                    <option value="">Throckmosrton St</option>
+                                    <option value="">bizzell St</option>
+                                    <option value="">Wellborn Rd</option>
+                                    <option value="">Nagle St</option>
+                                    <option value="">Ross St</option>
+                                    <option value="">Luther St W</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- <table id="table" style="margin-top: 15% width: 100% "></table> -->
+                        <table class="table table-bordered" style="margin-top: 9px; text-align: center" >
+                            <thead style="color: #ffff; font-size: 12px; background-color: #500000">
+                            <tr>
+                                <th style="width: 15%; text-align: center">Plate number</th>
+                                <th style="width: 10%; text-align: center">Type</th>
+                                <th style="width: 10%; text-align: center">Speed</th>
+                                <th style="width: 20%; text-align: center">Transport Content</th>
+                                <th style="width: 17%; text-align: center">Destination</th>
+                                <th style="width: 13%; text-align: center">Entry time</th>
+                                <th style="width: 15%; text-align: center">Departure time</th>
+                            </tr>
+                            </thead>
+                            <tbody  style="color: #ffff; font-size: 12px">
+                            <tr>
+                                <td>TX1234</td>
+                                <td>Students</td>
+                                <td>20km/h</td>
+                                <td>Manned</td>
+                                <td>Wehner Building</td>
+                                <td>2024-08-13</td>
+                                <td>2024-08-14</td>
+                            </tr>
+                            <tr>
+                                <td>TX1223</td>
+                                <td>Employees</td>
+                                <td>30km/h</td>
+                                <td>Manned</td>
+                                <td>Bright Building</td>
+                                <td>2024-08-13</td>
+                                <td>2024-08-14</td>
+                            </tr>
+                            <tr>
+                                <td>TX1223</td>
+                                <td>Visitors</td>
+                                <td>25km/h</td>
+                                <td>Manned</td>
+                                <td>Chemistry</td>
+                                <td>2024-08-13</td>
+                                <td>2024-08-14</td>
+                            </tr>
+                            <tr>
+                                <td>TX1223</td>
+                                <td>Vendors</td>
+                                <td>20km/h</td>
+                                <td>Loading cargo</td>
+                                <td>Engineering Building</td>
+                                <td>2024-08-13</td>
+                                <td>2024-08-14</td>
+                            </tr>
+                            <tr>
+                                <td>TX1223</td>
+                                <td>Visitors</td>
+                                <td>30km/h</td>
+                                <td>Manned</td>
+                                <td>ZACH</td>
+                                <td>2024-08-13</td>
+                                <td>2024-08-14</td>
+                            </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="right_cage">
+                <!--顶部切换位置-->
+                <div class="dataAllBorder01 cage_cl" style="margin-top: 9% !important; height: 24%">
+                    <div class="dataAllBorder02" id="cage_cl" >
+                        <div class="analysis">Campus Population Flow</div>
+                        <ul  class="data_show_box">
+                            <li class="data_cage">6</li>
+                            <li class="data_cage">2</li>
+                            <li class="data_cage" style="background-image: none;">,</li>
+                            <li class="data_cage">3</li>
+                            <li class="data_cage">0</li>
+                            <li class="data_cage">5</li>
+                        </ul>
+                        <div class="depart_number_box">
+                            <ul class="depart_number_cage">
+                                <li class="depart_name">Teaching：</li>
+                                <li class="depart_number">3,238</li>
+                            </ul>
+                            <ul class="depart_number_cage">
+                                <li class="depart_name">Library：</li>
+                                <li class="depart_number">1,630</li>
+                            </ul>
+                            <ul class="depart_number_cage" style="margin-bottom: 0px;">
+                                <li class="depart_name">Canteen：</li>
+                                <li class="depart_number">4,251</li>
+                            </ul>
+                            <ul class="depart_number_cage" style="margin-bottom: 0px;">
+                                <li class="depart_name">Stadium：</li>
+                                <li class="depart_number">3,985</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dataAllBorder02 over_hide" id="cage_cl1" style="display: none" >
+                        <div class="analysis">Abnormal point basic information</div>
+                        <ul class="location_msg_box">
+                            <li class="location_msg01 location_single">Type：<a href="#" style="color: #dc0000;">Buildings</a></li>
+                            <li class="location_msg02 location_single">Description：Broken windows</a></li>
+                            <li class="location_msg02 location_double">Time：<a href="#" style="color: #cdd6db;">2024-08-13<br>11:40</a></li>
+                            <li class="location_msg01 location_double">Address：306 University Dr, College Station, TX 77843</a></li>
+                            <li class="location_msg01 location_single" style="width: 100%; height: 40%">content：The building's walls are falling off and windows are broken</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dataAllBorder01 cage_cl check_increase" style=" margin-top: 1.5% !important;">
+                    <!--切换01-->
+                    <div class="dataAllBorder02 over_hide dataAllBorder20" id="over_hide">
+                        <div >
+                            <select id="selLayer" style="width:150px; margin-top: 0.5%">
+                                <option value="">Teaching Building</option>
+                                <option value="">Library</option>
+                                <option value="">Canteen</option>
+                                <option value="">Stadium</option>
+                                <option value="">Dormitory</option>
+                                <option value="">Office Building</option>
+                            </select>
+                        </div>
+                        <div class="analysis2">Building Monitoring</div>
+ 
+                        <table class="table table-bordered" style="margin-top: 0px;">
+                            <thead>
+                            <tr>
+                                <th style="width: 15%; vertical-align: middle; font-size: 15px">Name</th>
+                                <th style="vertical-align: middle; font-size: 15px">Population</th>
+                                <th style="vertical-align: middle; font-size: 15px">Classes</th>
+                                <th style="vertical-align: middle; font-size: 15px">Power consumption</th>
+                                <th style="vertical-align: middle; font-size: 15px">Carbon emission</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>ZACH</td>
+                                <td>1234</td>
+                                <td>132</td>
+                                <td>2000kwh</td>
+                                <td>123t</td>
+                            </tr>
+                            <tr>
+                                <td>WCBA</td>
+                                <td>2213</td>
+                                <td>413</td>
+                                <td>2231kwh</td>
+                                <td>112t</td>
+                            </tr>
+                            <tr>
+                                <td>ILCB</td>
+                                <td>1231</td>
+                                <td>1345</td>
+                                <td>2231kwh</td>
+                                <td>1133t</td>
+                            </tr>
+                            <tr>
+                                <td>HECC</td>
+                                <td>2413</td>
+                                <td>1231</td>
+                                <td>2223kwh</td>
+                                <td>1212t</td>
+                            </tr>
+                            <tr>
+                                <td>ILSQ</td>
+                                <td>1231</td>
+                                <td>554</td>
+                                <td>2231kwh</td>
+                                <td>1221t</td>
+                            </tr>
+                            <tr>
+                                <td>ARCC</td>
+                                <td>4221</td>
+                                <td>123</td>
+                                <td>2231kwh</td>
+                                <td>1213t</td>
+                            </tr>
+                            <tr>
+                                <td>CHEN</td>
+                                <td>1213</td>
+                                <td>2413</td>
+                                <td>2212kwh</td>
+                                <td>1223t</td>
+                            </tr>
+                            <tr>
+                                <td>MPHY</td>
+                                <td>1231</td>
+                                <td>1231</td>
+                                <td>2231kwh</td>
+                                <td>1213t</td>
+                            </tr>
+                            <tr>
+                                <td>BLOC</td>
+                                <td>4213</td>
+                                <td>123</td>
+                                <td>2211kwh</td>
+                                <td>1123t</td>
+                            </tr>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                    <!--切换02-->
+                    <div class="dataAllBorder02 over_hide dataAllBorder20" id="over_hide1"  style="display: none">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th style="width: 18%;font-size: 15px;">Type</th>
+                                <th style="font-size: 15px">Time</th>
+                                <th style="font-size: 15px">Description</th>
+                                <th style="font-size: 15px">Address</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Buildings</td>
+                                <td>08-13</td>
+                                <td>-</td>
+                                <td>TX 77843</td>
+                            </tr>
+                            <tr>
+                                <td>Environment</td>
+                                <td>08-13</td>
+                                <td>-</td>
+                                <td>TX 77823</td>
+                            </tr>
+                            <tr>
+                                <td>Transportation</td>
+                                <td>08-13</td>
+                                <td>-</td>
+                                <td>TX 77867</td>
+                            </tr>
+                            <tr>
+                                <td>Energy</td>
+                                <td>08-13</td>
+                                <td>-</td>
+                                <td>TX 77812</td>
+                            </tr>
+                            <tr>
+                                <td>Transportation</td>
+                                <td>08-13</td>
+                                <td>-</td>
+                                <td>TX 77890</td>
+                            </tr>
+                            <tr>
+                                <td>Buildings</td>
+                                <td>08-13</td>
+                                <td>-</td>
+                                <td>TX 77812</td>
+                            </tr>
+                            <tr>
+                                <td>Transportation</td>
+                                <td>08-13</td>
+                                <td>-</td>
+                                <td>TX 77825</td>
+                            </tr>
+                            <tr>
+                                <td>Buildings</td>
+                                <td>08-13</td>
+                                <td>-</td>
+                                <td>TX 77828</td>
+                            </tr>
+                            <tr>
+                                <td>Buildings</td>
+                                <td>08-13</td>
+                                <td>-</td>
+                                <td>TX 77879</td>
+                            </tr>
+                            <tr>
+                                <td>Transportation</td>
+                                <td>08-13</td>
+                                <td>-</td>
+                                <td>TX 77812</td>
+                            </tr>
+                            <tr>
+                                <td>Transportation</td>
+                                <td>08-13</td>
+                                <td>-</td>
+                                <td>TX 77889</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--地址检索切换03-->
+                    <div class="dataAllBorder02 addition_check_in" style="display: none;position: relative" >
+                        <div class="analysis" style="height: 34px">Address Search：</div>
+                        <div class="search_plate_box">
+                            <ul class="search_separate">
+                                <li class="search_title">Type：</li>
+                                <select class="search_input_box search_chose_box">
+                                    <option>All</option>
+                                    <option>Buildings</option>
+                                    <option>Road</option>
+                                    <option>Park</option>
+                                </select>
+                            </ul>
+                            <ul class="search_separate">
+                                <li class="search_title">Name：</li>
+                                <li class="search_input_box"><input class="search_input" type="text"></li>
+                            </ul>
+                            <button class="search_btn">Search</button>
+                        </div>
+                        <!--检索结果板块-->
+                        <div class="search_sesult_box">
+                            <ul  class="search_result">
+                                <li class="search_result_add">School of Architecture</li>
+                                <li class="search_location" title="定位"></li>
+                                <li class="search_eddit" title="操作"></li>
+                                <li class="search_result_road">789 Ross St, College Station, TX 77843</li>
+                            </ul>
+                            <ul  class="search_result">
+                                <li class="search_result_add">Reed Arena</li>
+                                <li class="search_location" title="定位"></li>
+                                <li class="search_eddit" title="操作"></li>
+                                <li class="search_result_road">730 Olsen Blvd, College Station, TX 77843</li>
+                            </ul>
+                            <ul  class="search_result">
+                                <li class="search_result_add">Mays Business School</li>
+                                <li class="search_location" title="定位"></li>
+                                <li class="search_eddit" title="操作"></li>
+                                <li class="search_result_road">210 Olsen Blvd, College Station, TX 77843</li>
+                            </ul>
+                            <ul  class="search_result">
+                                <li class="search_result_add">Hullabaloo Hall</li>
+                                <li class="search_location" title="定位"></li>
+                                <li class="search_eddit" title="操作"></li>
+                                <li class="search_result_road">306 University Dr, College Station, TX 77843</li>
+                            </ul>
+                            <ul  class="search_result">
+                                <li class="search_result_add">Kyle Field</li>
+                                <li class="search_location" title="定位"></li>
+                                <li class="search_eddit" title="操作"></li>
+                                <li class="search_result_road">161 Wellborn Rd, College Station, TX 77840</li>
+                            </ul>
+
+                        </div>
+                        <!--翻页模块-->
+                        <div class="tcdPageCode"></div>
+                    </div>
+                    <!--危化品检索切换04-->
+                    <div class="dataAllBorder02 chemistry_check_in" id="chemistry_check_in" style="display: none;position: relative" >
+                        <div class="analysis" style="height: 34px;">Important Lab Search：</div>
+                        <div class="search_plate_box">
+                            <ul class="search_separate">
+                                <li class="search_title">Lab：</li>
+                                <select class="search_input_box search_chose_box">
+                                    <option>Urban AI Lab</option>
+                                    <option>xxxx</option>
+                                    <option>xxxx</option>
+                                </select>
+                            </ul>
+                            <ul class="search_separate">
+                                <li class="search_title">Name：</li>
+                                <li class="search_input_box"><input class="search_input" type="text"></li>
+                            </ul>
+                            <button class="search_btn">Search</button>
+                        </div>
+                        <!--检索结果板块-->
+                        <div class="search_sesult_box">
+                            <ul  class="search_result">
+                                <li class="search_result_add danger_result">Department of Chemistry</li>
+                                <li class="danger_level level03">***</li>
+                                <li class="search_loca8tion" title="定位"></li>
+                                <li class="search_eddit" title="生命周期" onclick="showLife()"></li>
+                                <li class="search_result_car car_personal">3255 TAMU, 580 Ross St</li>
+                            </ul>
+                            <ul  class="search_result">
+                                <li class="search_result_add danger_result">Department of Psychological</li>
+                                <li class="danger_level level03">***</li>
+                                <li class="search_location" title="定位"></li>
+                                <li class="search_eddit" title="生命周期"></li>
+                                <li class="search_result_car car_personal">4235 TAMU, College Station</li>
+                            </ul>
+                            <ul  class="search_result">
+                                <li class="search_result_add danger_result">Department of Chemistry</li>
+                                <li class="danger_level level03">***</li>
+                                <li class="search_loca8tion" title="定位"></li>
+                                <li class="search_eddit" title="生命周期" onclick="showLife()"></li>
+                                <li class="search_result_car car_personal">3255 TAMU, 580 Ross St</li>
+                            </ul>
+                            <ul  class="search_result">
+                                <li class="search_result_add danger_result">Department of Psychological</li>
+                                <li class="danger_level level03">***</li>
+                                <li class="search_location" title="定位"></li>
+                                <li class="search_eddit" title="生命周期"></li>
+                                <li class="search_result_car car_personal">4235 TAMU, College Station</li>
+                            </ul>
+                            <ul  class="search_result">
+                                <li class="search_result_add danger_result">Department of Psychological</li>
+                                <li class="danger_level level03">***</li>
+                                <li class="search_location" title="定位"></li>
+                                <li class="search_eddit" title="生命周期"></li>
+                                <li class="search_result_car car_personal">4235 TAMU, College Station</li>
+                            </ul>
+                        </div>
+                        <!--翻页模块-->
+                        <div class="chemistry_tcdPageCode"></div>
+                    </div>
+                    <!--企业检索切换05-->
+                    <div class="dataAllBorder02 enterprise_check_in" id="enterprise_check_in" style="display: none;position: relative" >
+                        <div class="analysis" style="height: 34px;">Course location search：</div>
+                        <div class="search_plate_box">
+                            <ul class="search_separate">
+                                <li class="search_title">Course：</li>
+                                <select class="search_input_box search_chose_box">
+                                    <option>Planning Methods and Techniques</option>
+                                    <option>Applied Planning</option>
+                                    <option>Planning Theory and History</option>
+                                    <option>Resilient Communities</option>
+                                    <option>Facilities Management</option>
+                                    <option>Historic Preservation</option>
+                                </select>
+                            </ul>
+                            <ul class="search_separate">
+                                <li class="search_title">Name：</li>
+                                <li class="search_input_box"><input class="search_input" type="text"></li>
+                            </ul>
+
+                            <button class="search_btn">Search</button>
+                        </div>
+                        <!--检索结果板块-->
+                        <div class="search_sesult_box">
+                            <ul  class="search_result">
+                                <li class="search_result_add">Planning Theory and History</li>
+                                <li class="search_location" title="定位"></li>
+                                <li class="search_eddit" onclick="people()" title="操作"></li>
+                                <li class="search_result_road">Wehner Building-210, College Station, TX 77843</li>
+                            </ul>
+                            <ul  class="search_result">
+                                <li class="search_result_add">Applied Planning</li>
+                                <li class="search_location" title="定位"></li>
+                                <li class="search_eddit" onclick="people()" title="操作"></li>
+                                <li class="search_result_road">Kleberg Center-474 Olsen Bl, College Station, TX 77843</li>
+                            </ul>
+                            <ul  class="search_result">
+                                <li class="search_result_add">Facilities Management</li>
+                                <li class="search_location" title="定位"></li>
+                                <li class="search_eddit" onclick="people()" title="操作"></li>
+                                <li class="search_result_road">Student Recreation Center-187 Corrington Dr, TX 77843</li>
+                            </ul>
+                            <ul  class="search_result">
+                                <li class="search_result_add">Applied Planning</li>
+                                <li class="search_location" title="定位"></li>
+                                <li class="search_eddit" onclick="people()" title="操作"></li>
+                                <li class="search_result_road">Kleberg Center-474 Olsen Bl, College Station, TX 77843</li>
+                            </ul>
+                            <ul  class="search_result">
+                                <li class="search_result_add">Applied Planning</li>
+                                <li class="search_location" title="定位"></li>
+                                <li class="search_eddit" onclick="people()" title="操作"></li>
+                                <li class="search_result_road">Kleberg Center-474 Olsen Bl, College Station, TX 77843</li>
+                            </ul>
+                        </div>
+                        <!--翻页模块-->
+                        <div class="enterprise_tcdPageCode"></div>
+                    </div>
+                    <!--车辆检索切换06-->
+                    <div class="dataAllBorder02" id="car_check_in" style="display: none;position: relative" >
+                        <div class="analysis" style="height: 34px;">Vehicle search：</div>
+                        <div class="search_plate_box">
+                            <ul class="search_separate">
+                                <li class="search_title">Number：</li>
+                                <li class="search_input_box"><input class="search_input" type="text"></li>
+                            </ul>
+                            <ul class="search_separate">
+                                <li class="search_title">Name：</li>
+                                <li class="search_input_box"><input class="search_input" type="text"></li>
+                            </ul>
+                            <button class="search_btn">Search</button>
+                        </div>
+                        <!--检索结果板块-->
+                        <div class="search_sesult_box">
+                            <ul  class="search_result">
+                                <li class="search_result_add">TX 1234</li>
+                                <li class="search_location" title="定位"></li>
+                                <li class="search_guiji"  title="轨迹回放"></li>
+                                <li class="search_result_car car_personal">Students</li>
+                                <li class="search_result_car car_time">Passenger car</li>
+                            </ul>
+                            <ul  class="search_result">
+                                <li class="search_result_add">TX 1224</li>
+                                <li class="search_location" title="定位"></li>
+                                <li class="search_guiji"  title="轨迹回放"></li>
+                                <li class="search_result_car car_personal">Students</li>
+                                <li class="search_result_car car_time">Passenger car</li>
+                            </ul>
+                            <ul  class="search_result">
+                                <li class="search_result_add">TX 1244</li>
+                                <li class="search_location" title="定位"></li>
+                                <li class="search_guiji"  title="轨迹回放"></li>
+                                <li class="search_result_car car_personal">Students</li>
+                                <li class="search_result_car car_time">Passenger car</li>
+                            </ul>
+                            <ul  class="search_result">
+                                <li class="search_result_add">TX 1414</li>
+                                <li class="search_location" title="定位"></li>
+                                <li class="search_guiji"  title="轨迹回放"></li>
+                                <li class="search_result_car car_personal">Vendors</li>
+                                <li class="search_result_car car_time">Lorry</li>
+                            </ul>
+                            <ul  class="search_result">
+                                <li class="search_result_add">TX 1414</li>
+                                <li class="search_location" title="定位"></li>
+                                <li class="search_guiji"  title="轨迹回放"></li>
+                                <li class="search_result_car car_personal">Vendors</li>
+                                <li class="search_result_car car_time">Lorry</li>
+                            </ul>
+
+                        </div>
+                        <!--翻页模块-->
+                        <div class="car_tcdPageCode"></div>
+                    </div>
+                </div>
+
+                <div class="dataAllBorder01 cage_cl check_decrease" style="margin-top: 1.5% !important; height: 32%; position: relative;">
+                    <div class="dataAllBorder02 over_hide" style="padding: 1.2%;">
+                        <div class="analysis">Scorecard for Campus Sustainability</div>
+                        <div class="danger_contain_box">
+                            <div id="container_huan" style="height: 100%;width: 100%"></div>
+                        </div>
+                        <div class="danger_depart_box">
+
+                            <ul class="danger_depart">
+                                <li class="danger_ico" style="background-image: url(img/images/pic_ico_01.png); background-position-x: 0px"></li>
+                                <li class="data_name">Buildings</li>
+                                <li class="data data01">7.8</li>
+                                <li class="data data02">↑&nbsp&nbsp1.2%</li>
+                            </ul>
+                            <ul class="danger_depart">
+                                <li class="danger_ico" style="background-image: url(img/images/pic_ico_02.png); background-position-x: 0px"></li>
+                                <li class="data_name">Environment</li>
+                                <li class="data data01">9.2</li>
+                                <li class="data data02" style="color: #ff2865;">↓&nbsp&nbsp0.3%</li>
+                            </ul>
+                            <ul class="danger_depart danger_depart01">
+                                <li class="danger_ico" style="background-image: url(img/images/pic_ico_01.png); background-position-x: 0px"></li>
+                                <li class="data_name" style="color: #ffffff;">Total Score</li>
+                                <li class="data data01">8.5</li>
+                                <li class="data data02">↑&nbsp&nbsp1%</li>
+                            </ul>
+                            <ul class="danger_depart danger_depart01" style="margin-top: 0;">
+                                <li class="danger_ico" style="background-image: url(img/images/pic_ico_01.png); background-position-y: 0px"></li>
+                                <li class="data_name">Transportation</li>
+                                <li class="data data01">8.6</li>
+                                <li class="data data02">↑&nbsp&nbsp1%</li>
+                            </ul>
+                            <ul class="danger_depart danger_depart01">
+                                <li class="danger_ico" style="background-image: url(img/images/pic_ico_01.png); background-position-x: 0px"></li>
+                                <li class="data_name">Energy</li>
+                                <li class="data data01">6.9</li>
+                                <li class="data data02">↑&nbsp&nbsp0.3%</li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- 第一页building分析，第一二三栏 -->
+        <div class="inner" style="display: none;" >
+            <div class="user_left l_left" style=" margin-left: 0.6%; position: relative;">
+                <div class="dataAllBorder02">                
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="buyTime" style="height: 90%"></div>
+                        <p>Building space utilization rate</p>
+                    </div>
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="whearAbook" style="height: 90%"></div>
+                        <p>Building damaged area</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 第二列 -->
+            <div class="user_left l_left" style=" margin-left: 0.6%; position: relative;">
+                <div class="dataAllBorder02">                
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="seaAbook01" style="height: 90%"></div>
+                        <p>Building settlement distance</p>
+                    </div>
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="Package01" style="height: 90%"></div>
+                        <p>Building light intensity</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 第三列 -->
+            <div class="user_left l_left" style=" margin-left: 0.6%; position: relative;">
+                <div class="dataAllBorder02">
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="bookAret" style="height: 90%"></div>
+                        <p>Building indoor temperature</p>
+                    </div>
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="bookBmonth" style="height: 90%"></div>
+                        <p>Building indoor air quality</p>
+                    </div>
+                </div>
+            </div>
+        
+        </div>  
+
+        <!-- 第二页environment第一列 -->
+        <div class="inner" style="display:none" >
+            <div class="user_left l_left" style=" margin-left: 0.6%; position: relative;">
+                <div class="dataAllBorder02">
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="zhanbi02" style="height: 90%"></div>
+                        <p>Environmental noise</p>
+                    </div>
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="zhanbi03" style="height: 90%"></div>
+                        <p>Environmental air quality</p>
+                    </div>
+                </div>
+            </div>
+            <!-- environment第二列 -->
+            <div class="user_left l_left" style=" margin-left: 0.6%; position: relative;">
+                <div class="dataAllBorder02">
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="allAly01" style="height: 90%"></div>
+                        <p>Surface water quality</p>
+                    </div>
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="allAly02" style="height: 90%"></div>
+                        <p>Soil environmental quality</p>
+                    </div>
+                </div>
+            </div> 
+            <!-- environment第三列 -->
+            <div class="user_left l_left" style=" margin-left: 0.6%; position: relative;">
+                <div class="dataAllBorder02">
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="allAly03" style="height: 90%"></div>
+                        <p>Green coverage rate</p>
+                    </div>
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="allAly04" style="height: 90%"></div>
+                        <p>Waste disposal rate</p>
+                    </div>
+                </div>
+            </div> 
+        
+        </div> 
+
+        <!-- 第五页scorecard第1列 -->
+        <div class="inner" style="display: none">
+            <div class="user_left2 l_left" style=" margin-left: 0.6%; position: relative;">
+                <div class="dataAllBorder02">
+                    <div class="manage_top_middle">
+                        <img class="pic"  src="video/图片23.jpg" style="height:fit-content">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <!-- 第五页scorecard第2列 -->
+            <div class="user_left l_left" style=" margin-left: 0.6%; position: relative;">
+                <div class="dataAllBorder02">
+                    <div class="manage_top_middle">
+                        <img class="pic" src="video/图片new2.jpg" style="height:fit-content">
+                        <p>Composite score among all campus plans(Example)</p>
+                    </div>
+                    <div class="manage_top_middle">
+                        <img class="pic" src="video/图片new.jpg" style="height:fit-content">
+                        <p>Campus sustainability assessment score map(Example)</p>
+                    </div>
+                    <!-- <div class="manage_top_middle">
+                        <div class="data_chart" id="shijian03" style="height: 90%"></div>
+                        <p>xxxsdsdsd</p>
+                    </div>
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="shijian04" style="height: 90%; margin-bottom: 0px;"></div>
+                        <p>xxxsdsdsd</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 第四页Energy第一列 -->
+        <div class="inner" style="display: none" >
+            <div class="manage_left l_left" style="position: relative;">
+                <div class="dataAllBorder02">
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="container1" style="height: 90%"></div>
+                        <p>Water consumption</p>
+                    </div>
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="container3" style="height: 90%"></div>
+                        <p>Power consumption</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 第四页Energy第2列 -->
+            <div class="manage_left l_left" style="position: relative;">
+                <div class="dataAllBorder02">
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="container4" style="height: 90%"></div>
+                        <p>Natural gas consumption</p>
+                    </div>
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="container5" style="height: 90%"></div>
+                        <p>Photovoltaic power generation</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 第四页Energy第3列 -->
+            <div class="manage_left l_left" style="position: relative;">
+                <div class="dataAllBorder02">
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="container6" style="height: 90%"></div>
+                        <p>Carbon emission</p>
+                    </div>
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="container9" style="height: 90%"></div>
+                        <p>Carbon sink</p>
+                    </div>
+                </div>
+            </div> 
+        
+        </div>
+
+
+        <!-- 第三页Transportation交通第1列 -->
+        <div class="inner" style="display: none;">
+            <div class="manage_left l_left" style="position: relative;">
+                <div class="dataAllBorder02">
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="rodeAbook" style="height: 90%"></div>
+                        <p>Traffic volume</p>
+                    </div>
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="userContainerAttendance" style="height: 90%"></div>
+                        <p>Parking space ratio</p>
+                    </div>
+                </div>
+            </div> 
+            <!-- 第三页Transportation交通第2列 -->            
+            <div class="manage_left l_left" style="position: relative;">
+                <div class="dataAllBorder02">
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="userContainerPersonal" style="height: 90%"></div>
+                        <p>Bus stop coverage rate</p>
+                    </div>
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="userContainerIllegal" style="height: 90%"></div>
+                        <p>Motor lane density</p>
+                    </div>
+                </div>
+            </div> 
+            <!-- 第三页Transportation交通第3列 --> 
+            <div class="manage_left l_left" style="position: relative;">
+                <div class="dataAllBorder02">
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="container12" style="height: 90%"></div>
+                        <p>Cycle lane density</p>
+                    </div>
+                    <div class="manage_top_middle">
+                        <div class="data_chart" id="container10" style="height: 90%"></div>
+                        <p>Pavement density</p>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+
+    </div>
+</div>
+
+<script src="js/echarts-all.js"></script>
+<script src="js/index.js"></script>
+<script src="js/bstable/js/bootstrap.min.js"></script>
+<script src="js/bstable/js/bootstrap-table.js"></script>
+<script type="text/javascript" src="js/jquery.pagination.js"></script>
+<script src="js/bstable/js/bootstrap-table-zh-CN.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5ieMMexWmzB9jivTq6oCRX9j&callback"></script>
+
+    <!--<script src="js/MainMap.js"></script>-->
+<script src="js/Home_page.js"></script>
+<script src="js/artDialog/artDialog.js"></script>
+<script src="js/artDialog/plugins/iframeTools.source.js"></script>
+<script>
+    var number;
+    $(function() {
+        if (window.screen.height <= 768) {
+            number = 4;
+        } else if (window.screen.height > 768 && window.screen.height <= 900) {
+            number = 6
+        } else if (window.screen.height > 1080) {
+            number = 8
+        }
+    });
+
+
+//    翻页模块
+    $(".tcdPageCode").createPage({
+        pageCount:5,
+        current:1,
+        backFn:function(p){}
+    });
+    $(".chemistry_tcdPageCode").createPage({
+    pageCount:4,
+    current:1,
+    backFn:function(p){}
+});
+    $(".enterprise_tcdPageCode").createPage({
+    pageCount:4,
+    current:1,
+    backFn:function(p){}
+});
+    $(".car_tcdPageCode").createPage({
+    pageCount:4,
+    current:1,
+    backFn:function(p){}
+});
+
+    $(function () {
+        $(".tit02Diva a").each(function (index) {
+            $(this).on("click",function () {
+                $(".data_map").eq(index).fadeIn().siblings(".data_map").stop().hide();
+                $(this).prev('i').removeClass('i_crlieAction');
+                $(this).siblings('a').prev('i').addClass('i_crlieAction');
+
+            })
+        });
+        BootstrapTable();
+        Echarts();
+        $("#fresh_tool").click(function(event){
+            event.stopPropagation();
+            cancel();
+        })
+
+    });
+    function EventClick(){
+        $(".check_increase").removeClass("check_increase_act");
+        $("#over_hide1").show().siblings().hide();
+        $(".check_decrease").show();
+        $("#cage_cl").hide();
+        // $("#map_title_innerbox").hide();
+        $("#cage_cl1").show();
+//        $("#over_hide").show();
+        $("#map_title_innerbox1").show();
+        $(".addition_check_in").hide();
+        $("#car_check_in").hide();
+        BootstrapTable();
+    }
+    function cancel(e){
+        $(".check_increase").removeClass("check_increase_act");
+        $("#over_hide").show().siblings().hide();
+        $(".check_decrease").show();
+        $("#cage_cl").show();
+        $("#cage_cl1").hide();
+        map.removeLayer("Stops-heat");
+        map.removeLayer("Add-Stops");
+        map.removeLayer("buffer-layer");
+        map.removeLayer("Add-Road");
+        map.easeTo("Model3D").hide();
+//        $("#cage_cl").show();
+//        $("#over_hide1").show();
+//        $("#map_title_innerbox").show();
+        BootstrapTable();
+    }
+
+    //    地址检索
+    $(".addition_check_btn").click(function () {
+        $(".check_increase").addClass("check_increase_act");
+        $(".check_decrease").hide()
+        $(".addition_check_in").show().siblings().hide()
+    });
+
+//    危化品检索
+    function chemistryCheck() {
+        $(".check_increase").addClass("check_increase_act");
+        $(".check_decrease").hide()
+        $("#chemistry_check_in").show().siblings().hide()
+    }
+
+    //    企业检索
+    function enterpriseCheck() {
+        $(".check_increase").addClass("check_increase_act");
+        $(".check_decrease").hide()
+        $("#enterprise_check_in").show().siblings().hide()
+    }
+
+    //    车辆检索
+    function carCheck() {
+        $(".check_increase").addClass("check_increase_act");
+        $(".check_decrease").hide()
+        $("#car_check_in").show().siblings().hide()
+    }
+
+    function BootstrapTable() {
+        $('#table').bootstrapTable({
+            method: "get",
+            striped: true,
+            singleSelect: false,
+            url: "json/DGCar.json",
+            dataType: "json",
+            pagination: true, //分页
+            pageSize: number,
+            pageNumber: 1,
+            search: false, //显示搜索框
+            contentType: "application/x-www-form-urlencoded",
+            queryParams: null,
+            columns: [
+
+                {
+                    title: '车牌号',
+                    field: 'carno',
+                    width:80,
+                    align: 'center',
+                    valign: 'middle'
+                },
+                {
+                    title: '所属企业',
+                    field: 'company',
+                    align: 'center',
+                    valign: 'middle'
+                },
+
+                {
+                    title: '运输内容',
+                    field: 'content',
+                    align: 'center'
+                },
+
+                {
+                    title: '行驶速度',
+                    field: 'speed',
+                    width:80,
+                    align: 'center'
+                },
+                {
+                    title: '车辆载重',
+                    field: 'load',
+                    width:80,
+                    align: 'center'
+                },
+                {
+                    title: '操作',
+                    field: 'load',
+                    align: 'center',
+                    formatter: function (value, row) {
+                        var e = '<a  href="javascript:void(0)" title="" onclick="showCarDetai()">查看详情</a> ';
+                        var d = '<a  href="javascript:void(0)" title="" onclick="analiysis(\'' + row.id + '\')">车辆定位</a> ';
+                        return e + d;
+                    }
+                }
+
+            ]
+        });
+
+    }
+
+
+    //    右下角score for sustainbility的总结性数据
+    function Echarts() {
+        var myChart = echarts.init($("#container_huan")[0]);
+        var option = {
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b}: {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                x: 'left',
+                data:['Buildings','Environment','Transportation','Energy'],
+                textStyle:{
+                    color:"#e9ebee"
+                }
+            },
+            series: [
+                {
+                    name:'Score',
+                    type:'pie',
+                    center:['80%','50%'],
+                    radius: ['50%', '80%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'center'
+                        },
+                        emphasis: {
+                            show: true,
+                            textStyle: {
+                                fontSize: '30',
+                                fontWeight: 'bold'
+                            }
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            label: {
+                                show: false
+                            },
+                            labelLine: {
+                                show: false
+                            }
+                        }
+                    },
+                    data:[
+                        {value:78, name:'Buildings'},
+                        {value:92, name:'Environment'},
+                        {value:86, name:'Transportation'},
+                        {value:69, name:'Energy'},
+                    ]
+                }
+            ]
+        };
+        myChart.setOption(option);
+    }
+
+
+    function TimeControl(){
+        $(".message_scroll_box").animate({marginTop:96},800,
+                function(){
+                    $(".message_scroll_box").css({marginTop:0});    //把顶部的边界清零
+                    $(".message_scroll_box .message_scroll:first").before($(".message_scroll_box .message_scroll:last"));    //在第一个新闻后面插入最后一个新闻
+
+                });
+    }
+    var T=setInterval(TimeControl,2300);    //开始定时
+    $(".message_scroll_box").mouseenter(function(){
+        clearInterval(T);    //停止定时
+    })
+            .mouseleave(function(){
+                T=setInterval(TimeControl,2500);    //再次定时
+            })
+
+</script>
+
+<!--轨迹回放时间日期选择-->
+<script>
+    !function(){
+        laydate.skin('danlan');//切换皮肤，请查看skins下面皮肤库
+        laydate({elem: '#demo'});
+        laydate({elem: '#demo1'});//绑定元素
+    }();
+    //日期范围限制
+    var start = {
+        elem: '#start',
+        format: 'YYYY-MM-DD',
+        min: laydate.now(), //设定最小日期为当前日期
+        max: '2099-06-16', //最大日期
+        istime: true,
+        istoday: false,
+        choose: function(datas){
+            end.min = datas; //开始日选好后，重置结束日的最小日期
+            end.start = datas //将结束日的初始值设定为开始日
+        }
+    };
+
+    var end = {
+        elem: '#end',
+        format: 'YYYY-MM-DD',
+        min: laydate.now(),
+        max: '2099-06-16',
+        istime: true,
+        istoday: false,
+        choose: function(datas){
+            start.max = datas; //结束日选好后，充值开始日的最大日期
+        }
+    };
+    laydate(start);
+    laydate(end);
+    function edit() {
+        layer.open({
+            type: 2,
+            title: '存储详情',
+            shade: 0.5,
+            skin: 'layui-layer-rim',
+            area: ['700px', '400px'],
+            shadeClose: true,
+            closeBtn: 1,
+            content: 'saveFindTail.html'
+        });
+    }
+</script>
+<!-- <script>
+    // 百度地图API功能
+    var map = new BMap.Map("map");    // 创建Map实例
+    map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+    //添加地图类型控件
+    map.addControl(new BMap.MapTypeControl({
+        mapTypes:[
+            BMAP_NORMAL_MAP,
+            BMAP_HYBRID_MAP
+        ]}));
+    var mapStyle={
+        style:"dark"
+    };
+    map.setMapStyle(mapStyle);
+    map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
+    map.enableScrollWheelZoom(true);
+</script> -->
+
+
+
+<!-- 导入mapbox，实现地图模型交互功能 -->
+
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.js"></script>
+<script src="https://unpkg.com/@turf/turf/turf.min.js"></script>
+
+
+
+<div id="map"></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1Ijoid2FuZ2NoZWVyIiwiYSI6ImNsemNldmg3dDBiYjUyam9hd3Y1eHcwM2UifQ.O4kBa2QHGIKhhv1XLXxdqA';
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/satellite-streets-v12', // style URL
+        projection: 'globe', // Display the map as a globe, since satellite-v9 defaults to Mercator
+        center: [-96.355374 , 30.606424], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+        // pitch: 75, // pitch in degrees
+        // bearing: -13, // bearing in degrees       
+        zoom: 12.5 // starting zoom
+
+
+    });
+
+// ------------------------------------------------------------------
+    //放大功能
+    function zoomIn() {
+        var zm = map.getZoom() + 1;
+        if (zm <20)
+            map.setZoom(zm);
+    }
+
+    //缩小功能
+    function zoomOut() {
+        var zm = map.getZoom() - 1;
+        if (zm > 4)
+            map.setZoom(zm);
+    }
+
+// ------------------------------------------------------------------
+ 
+    // 全屏切换函数
+    function toggleFullscreen() {
+    var container = document.getElementById('map');
+    if (document.fullscreenElement) {
+        if (document.exitFullscreen) {
+        document.exitFullscreen();
+        }
+    } else {
+        if (container.requestFullscreen) {
+        container.requestFullscreen();
+        }
+    }
+    }
+    
+    // 监听全屏事件变化
+    document.addEventListener('fullscreenchange', function() {
+    if (!document.fullscreenElement) {
+        // 退出全屏时，恢复地图尺寸
+        map.resize();
+    }
+    });
+    
+// ------------------------------------------------------------------    
+
+    // 按钮点击事件处理函数
+    function flyToLocation() {
+    // 设定新的中心点坐标和缩放级别
+    const newCenter = [-96.338343 , 30.608364]; // 新的中心点坐标
+    const newZoom = 16; // 新的缩放级别
+    
+    // 使用jumpTo方法飞到新视角
+    map.easeTo({
+        center: newCenter,
+        zoom: newZoom,
+        pitch: 75, // pitch in degrees
+        bearing: -13, // bearing in degrees
+        duration: 2000   
+    });
+    
+    // 或者使用easeTo方法平滑飞到新视角
+    // map.easeTo({
+    //   center: newCenter,
+    //   zoom: newZoom,
+    //   duration: 2000 // 2000毫秒的动画持续时间
+    // });
+    }
+    
+    // 添加按钮点击事件
+    document.getElementById('Model3D').addEventListener('click', flyToLocation);
+
+// ------------------------------------------------------------------   
+    // 地图重置归位
+    document.getElementById('fresh_tool').addEventListener('click', function() {
+        map.jumpTo({
+            center: [-96.355374 , 30.606424], // 重置地图中心点
+            zoom: 12.5, // 重置地图缩放级别
+            pitch: 0
+        });
+    })
+
+// ------------------------------------------------------------------   
+
+    //加载校园3D模型
+    map.on('style.load', () => {
+        // Insert the layer beneath any symbol layer.
+        const layers = map.getStyle().layers;
+        const labelLayerId = layers.find(
+            (layer) => layer.type === 'symbol' && layer.layout['text-field']
+        ).id;
+        
+        
+        // 加载校园巴士站点
+        map.addSource('Stops', {
+            type: 'geojson',
+            data: 'https://gis.tamu.edu/arcgis/rest/services/TS/TS_Main/MapServer/2/query?where=1%3D1&text=&objectIds=&time=&timeRelation=esriTimeRelationOverlaps&geometry=&geometryType=esriGeometryPoint&inSR=&spatialRel=esriSpatialRelIntersects&distance=&units=esriSRUnit_Foot&relationParam=&outFields=&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&havingClause=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=false&resultOffset=&resultRecordCount=&returnExtentOnly=false&sqlFormat=none&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=geojson'
+        });
+
+        // 当地图加载完成时
+        map.on('load', function() {
+        // 添加点击事件监听器
+            document.getElementById('Add-Stops').addEventListener('click', function() {
+                // 点击事件发生时，加载一个新图层
+                map.addLayer({
+                    id: 'Add-Stops',
+                    type: 'circle',
+                    source: 'Stops',
+                    paint: {
+                        'circle-radius': 4,
+                        'circle-stroke-width': 2,
+                        'circle-color': 'red',
+                        'circle-stroke-color': 'white'
+                    }
+                },labelLayerId);
+
+ 
+            });
+        });
+
+        // map.on('load', function() {
+        //     document.getElementById('bufferstops').addEventListener('click', function() {
+        //         // 使用 Turf.js 进行缓冲区分析
+        //         const point = turf.point(map.getSource('Stops').features[0].geometry.coordinates); // 使用点的坐标
+        //         const buffered = turf.buffer(point, 1, { units: 'kilometers' }); // 1公里的缓冲区
+
+        //         // 添加缓冲区图层
+        //         map.addSource('buffer', {
+        //             'type': 'geojson',
+        //             'data': buffered
+        //         });
+
+        //         map.addLayer({
+        //             'id': 'buffer-layer',
+        //             'type': 'fill',
+        //             'source': 'buffer',
+        //             'layout': {},
+        //             'paint': {
+        //                 'fill-color': '#ff0000',
+        //                 'fill-opacity': 0.5
+        //             }
+        //         });
+
+        //     });
+        // });
+        
+        
+        map.on('click', 'Add-Stops', (event) => {
+            new mapboxgl.Popup()
+                .setLngLat(event.features[0].geometry.coordinates)
+                .setHTML(`<strong>StopName:</strong> ${event.features[0].properties.StopName}`)
+                .addTo(map);
+                
+            const point = turf.point(event.features[0].geometry.coordinates); // 使用点的坐标
+            const buffered = turf.buffer(point, 0.5, { units: 'kilometers' }); // 1公里的缓冲区
+
+            // 添加缓冲区图层
+            map.addSource('buffer', {
+                'type': 'geojson',
+                'data': buffered
+            });
+
+            map.addLayer({
+                'id': 'buffer-layer',
+                'type': 'fill',
+                'source': 'buffer',
+                'layout': {},
+                'paint': {
+                    'fill-color': '#F4F207',
+                    'fill-opacity': 0.3
+                }
+            });
+
+        });     
+
+// ------------------------------------------------------------------   
+
+        //////点击生成POI的热力图的模块  Heatmap
+        // 当地图加载完成时
+        map.on('load', function() {
+        // 添加点击事件监听器
+            document.getElementById('heatmap').addEventListener('click', function() {
+                // 点击事件发生时，加载一个新图层
+                map.addLayer({
+                    id: 'Stops-heat',
+                    type: 'heatmap',
+                    source: 'Stops',
+                    maxzoom: 15,
+                    paint: {
+                    // increase weight as diameter breast height increases
+                    'heatmap-weight': {
+                        property: 'dbh',
+                        type: 'exponential',
+                        stops: [
+                        [1, 0],
+                        [62, 1]
+                        ]
+                    },
+                    // increase intensity as zoom level increases
+                    'heatmap-intensity': {
+                        stops: [
+                        [11, 1],
+                        [15, 3]
+                        ]
+                    },
+                    // assign color values be applied to points depending on their density
+                    'heatmap-color': [
+                        'interpolate',
+                        ['linear'],
+                        ['heatmap-density'],
+                        0,
+                        'rgba(236,222,239,0)',
+                        0.2,
+                        'rgb(254,204,92)',
+                        0.4,
+                        'rgb(253,141,60)',
+                        0.6,
+                        'rgb(240,59,32)',
+                        0.8,
+                        'rgb(189,0,38)'
+                    ],
+                    // increase radius as zoom increases
+                    'heatmap-radius': {
+                        stops: [
+                        [11, 15],
+                        [15, 20]
+                        ]
+                    },
+                    // decrease opacity to transition into the circle layer
+                    'heatmap-opacity': {
+                        default: 1,
+                        stops: [
+                        [14, 0.7],
+                        [15, 0]
+                        ]
+                    }
+                    }
+                },
+                'waterway-label'
+                );    
+            });
+
+            // document.getElementById('heatmap').addEventListener('click', function() {
+            //     map.removeLayer('Stops-heat');
+            // });
+        });
+                 
+    
+        // //开启一个鼠标点击事件，只在id为samplelayer的图层上起作用
+        // map.on('click','Add-Stops', (e) => {
+        // //事件执行
+        // }); 
+
+// ------------------------------------------------------------------      
+
+        // // 加载缓冲区
+        // map.on('load', function() {
+        // // 添加点击事件监听器
+        //     document.getElementById('bufferStops').addEventListener('click', function() {
+        //         // 点击事件发生时，加载一个新图层
+        //         // 创建并添加缓冲区图层  
+        //         map.addLayer({
+        //             'id': 'buffer',
+        //             'type': 'fill',
+        //             'source': 'Stops', // 使用与点图层相同的源
+        //             'filter': ['==', '$type', 'Point'],
+        //             'layout': {
+        //             'visibility': 'none'
+        //             },
+        //             'paint': {
+        //             'fill-color': '#500000',
+        //             'fill-opacity': 0.8
+        //             },
+        //             'metadata': {
+        //             'buffer-size': 1000 // 缓冲区半径，单位为米
+        //             }
+        //         }); 
+        //     });
+
+        // // document.getElementById('heatmap').addEventListener('click', function() {
+        // //     map.removeLayer('Stops-heat');
+        // // });
+        // });
+// ------------------------------------------------------------------      
+        // 加载道路
+        // 当地图加载完成时
+        map.on('load', function() {
+        // 添加点击事件监听器
+            document.getElementById('Roadcon').addEventListener('click', function() {
+                // 点击事件发生时，加载一个新图层
+                map.addSource('Road', {
+                    type: 'geojson',
+                    data: 'https://gis.tamu.edu/arcgis/rest/services/FCOR/TAMU_BaseMap/MapServer/19/query?where=1=1&outFields=*&f=geojson&&returnGeometry=true'
+                });
+
+                map.addLayer({
+                    'id': 'Add-Road',
+                    'type': 'line',
+                    'source': 'Road',
+                    'paint': {
+                        'line-color': '#F4F207', 
+                        'line-width': 6,
+                        'line-opacity': 0.6
+
+                    }
+                },labelLayerId);
+
+ 
+            });
+        });    
+
+// ------------------------------------------------------------------   
+//////等时圈加载
+
+
+
+
+
+
+// ------------------------------------------------------------------      
+
+        // 加载校园边界范围
+        map.addSource('Background', {
+            type: 'geojson',
+            data: 'https://gis.tamu.edu/arcgis/rest/services/FCOR/TAMU_BaseMap/MapServer/62/query?where=1=1&outFields=*&f=geojson&&returnGeometry=true'
+        });
+
+        map.addLayer({
+            'id': 'Add-Background',
+            'type': 'fill',
+            'source': 'Background',
+            'paint': {
+                'fill-color': '#500000', 
+                'fill-opacity': 0.2
+
+            }
+        },labelLayerId);
+
+        map.addLayer({
+            'id': 'Add-Background3',
+            'type': 'line',
+            'source': 'Background',
+            'paint': {
+                'line-color': '#fff', 
+                'line-width': 4,
+                'line-opacity': 0.8
+
+            }
+        },labelLayerId);
+
+        map.addLayer({
+            'id': 'Add-Background2',
+            'type': 'line',
+            'source': 'Background',
+            'paint': {
+                'line-color': '#C00000', 
+                'line-width': 2,
+                // 'line-dasharray': [2, 2],
+                'line-opacity': 0.8
+            
+
+            }
+        },labelLayerId);
+
+
+        
+
+        
+
+// ------------------------------------------------------------------      
+        // The 'building' layer in the Mapbox Streets
+        // vector tileset contains building height data
+        // from OpenStreetMap.3D模型
+        map.addLayer(
+            {
+                'id': 'add-3d-buildings',
+                'source': 'composite',
+                'source-layer': 'building',
+                'filter': ['==', 'extrude', 'true'],
+                'type': 'fill-extrusion',
+                'minzoom': 15,
+                'paint': {
+                    'fill-extrusion-color': '#500000',
+
+                    // Use an 'interpolate' expression to
+                    // add a smooth transition effect to
+                    // the buildings as the user zooms in.
+                    'fill-extrusion-height': [
+                        'interpolate',
+                        ['linear'],
+                        ['zoom'],
+                        15,
+                        0,
+                        15.05,
+                        ['get', 'height']
+                    ],
+                    'fill-extrusion-base': [
+                        'interpolate',
+                        ['linear'],
+                        ['zoom'],
+                        15,
+                        0,
+                        15.05,
+                        ['get', 'min_height']
+                    ],
+                    'fill-extrusion-opacity': 0.8
+                }
+            },
+            labelLayerId
+        );
+    });
+
+
+
+
+
+
+
+
+
+
+
+</script> 
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
