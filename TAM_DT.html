@@ -88,7 +88,7 @@
                     </div>
                 </div>
                 <div class="dataAllBorder01 cage_cl" style="margin-top: 1.5% !important; height: 32%; position: relative;">
-                    <div class="dataAllBorder02" style="padding: 1.2%; overflow: hidden">
+                    <div class="dataAllBorder02" id="warnings" style="padding: 1.2%; overflow: hidden">
 
                         <div class="message_scroll_box">
                             <div class="message_scroll">
@@ -238,12 +238,12 @@
                             <button class="playback" style="width:60px" onclick="setBufferCenter()">Point</button>
                             <input class="trajectory" id="txtBufferX" placeholder="X">
                             <input class="trajectory" id="txtBufferY" placeholder="Y">
-                            <input value="10" class="trajectory" id="txtBufferDis" placeholder="Distance">
+                            <input value="500" class="trajectory" id="txtBufferDis" placeholder="Distance">
                             <select class="ratio">
                                 <option>m</option>
                                 <option>km</option>
                             </select>
-                            <button class="playback"  onclick="executeBuffer();edit()" style="width:60px">Analysis</button>
+                            <button class="playback"  id="bufferStops" style="width:60px">Analysis</button>
                             <button class="playback close_playback">Close</button>
                         </div>
 
@@ -267,7 +267,7 @@
                             <span class="map_tool" id="heatmap">
                                     <a class="map_tool_inner" title="Heat map" style="background-position-x:-180px"></a>
                                 </span>
-                            <span class="map_tool" id="btnBuffer">
+                            <span class="map_tool" id="btnBuffer" >
                                     <a class="map_tool_inner" title="Buffer analysis" style="background-position-x:-216px"></a>
                                 </span>
                             <span class="map_tool">
@@ -426,7 +426,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="dataAllBorder02 over_hide" id="cage_cl1" style="display: none" >
+                    <div class="dataAllBorder02 over_hide" id="cage_cl1"  style="display: none" >
                         <div class="analysis">Abnormal point basic information</div>
                         <ul class="location_msg_box">
                             <li class="location_msg01 location_single">Type：<a href="#" style="color: #dc0000;">Buildings</a></li>
@@ -1184,8 +1184,9 @@
         $("#cage_cl1").hide();
         map.removeLayer("Stops-heat");
         map.removeLayer("Add-Stops");
-        map.removeLayer("buffer-layer");
+        map.removeLayer("buffer");
         map.removeLayer("Add-Road");
+        map.removeLayer("warningpoints");
         map.easeTo("Model3D").hide();
 //        $("#cage_cl").show();
 //        $("#over_hide1").show();
@@ -1568,60 +1569,69 @@
             });
         });
 
-        // map.on('load', function() {
-        //     document.getElementById('bufferstops').addEventListener('click', function() {
-        //         // 使用 Turf.js 进行缓冲区分析
-        //         const point = turf.point(map.getSource('Stops').features[0].geometry.coordinates); // 使用点的坐标
-        //         const buffered = turf.buffer(point, 1, { units: 'kilometers' }); // 1公里的缓冲区
-
-        //         // 添加缓冲区图层
-        //         map.addSource('buffer', {
-        //             'type': 'geojson',
-        //             'data': buffered
-        //         });
-
-        //         map.addLayer({
-        //             'id': 'buffer-layer',
-        //             'type': 'fill',
-        //             'source': 'buffer',
-        //             'layout': {},
-        //             'paint': {
-        //                 'fill-color': '#ff0000',
-        //                 'fill-opacity': 0.5
-        //             }
-        //         });
-
-        //     });
-        // });
         
+// ------------------------------------------------------------------      
+
+        //加载缓冲区
+        map.on('load', function() {
+        // 添加点击事件监听器
+            document.getElementById('bufferStops').addEventListener('click', function() {          
+                map.addLayer({
+                    'id': 'buffer',
+                    'type': 'circle',
+                    'source': 'Stops', // 使用与点图层相同的源
+                    'paint': {
+                    'circle-color': '#F4F207',
+                    'circle-radius': {
+                        'base': 2, // 基于地图缩放级别的半径因子
+                        'stops': [
+                        [0, 0], // 当地图缩放级别为 1 时，半径为 5
+                        [13,35], // 当地图缩放级别为 10 时，半径为 15],
+                        ],
+                        },
+                    'circle-opacity': 0.2
+                    },
+                }); 
+            });
+        });
+    
+
         
         map.on('click', 'Add-Stops', (event) => {
             new mapboxgl.Popup()
                 .setLngLat(event.features[0].geometry.coordinates)
                 .setHTML(`<strong>StopName:</strong> ${event.features[0].properties.StopName}`)
                 .addTo(map);
-                
-            const point = turf.point(event.features[0].geometry.coordinates); // 使用点的坐标
-            const buffered = turf.buffer(point, 0.5, { units: 'kilometers' }); // 1公里的缓冲区
+        });
+        
 
-            // 添加缓冲区图层
-            map.addSource('buffer', {
-                'type': 'geojson',
-                'data': buffered
-            });
+        // map.getSource('Stops').forEach(features => {
+        //     if (features.geometry.type === "MultiPoint") {
+        //         const coordinates = features[0].geometry.coordinates;
+        //     }
+        // });
 
-            map.addLayer({
-                'id': 'buffer-layer',
-                'type': 'fill',
-                'source': 'buffer',
-                'layout': {},
-                'paint': {
-                    'fill-color': '#F4F207',
-                    'fill-opacity': 0.3
-                }
-            });
+        // const point = turf.multiPoint(map.getSource('Stops').features[0].geometry.coordinates); // 使用点的坐标
+        // const buffered = turf.buffer(point, 0.4, { units: 'kilometers' }); // 1公里的缓冲区
+        // //event.features[0].geometry.coordinates
+        // //[[-96.339781 , 30.625352],[-96.357278 , 30.621942]]
+        // // 添加缓冲区图层
+        // map.addSource('buffer', {
+        // 'type': 'geojson',
+        // 'data': buffered
+        // }); 
+        // map.addLayer({
+        //     'id': 'buffer-layer',
+        //     'type': 'fill',
+        //     'source': 'buffer',
+        //     'layout': {},
+        //     'paint': {
+        //         'fill-color': '#F4F207',
+        //         'fill-opacity': 0.3
+        //     }
+        // });
 
-        });     
+             
 
 // ------------------------------------------------------------------   
 
@@ -1701,48 +1711,18 @@
         // //事件执行
         // }); 
 
-// ------------------------------------------------------------------      
 
-        // // 加载缓冲区
-        // map.on('load', function() {
-        // // 添加点击事件监听器
-        //     document.getElementById('bufferStops').addEventListener('click', function() {
-        //         // 点击事件发生时，加载一个新图层
-        //         // 创建并添加缓冲区图层  
-        //         map.addLayer({
-        //             'id': 'buffer',
-        //             'type': 'fill',
-        //             'source': 'Stops', // 使用与点图层相同的源
-        //             'filter': ['==', '$type', 'Point'],
-        //             'layout': {
-        //             'visibility': 'none'
-        //             },
-        //             'paint': {
-        //             'fill-color': '#500000',
-        //             'fill-opacity': 0.8
-        //             },
-        //             'metadata': {
-        //             'buffer-size': 1000 // 缓冲区半径，单位为米
-        //             }
-        //         }); 
-        //     });
-
-        // // document.getElementById('heatmap').addEventListener('click', function() {
-        // //     map.removeLayer('Stops-heat');
-        // // });
-        // });
 // ------------------------------------------------------------------      
         // 加载道路
         // 当地图加载完成时
         map.on('load', function() {
         // 添加点击事件监听器
+            map.addSource('Road', {
+                type: 'geojson',
+                data: 'https://gis.tamu.edu/arcgis/rest/services/FCOR/TAMU_BaseMap/MapServer/19/query?where=1=1&outFields=*&f=geojson&&returnGeometry=true'
+            });
             document.getElementById('Roadcon').addEventListener('click', function() {
                 // 点击事件发生时，加载一个新图层
-                map.addSource('Road', {
-                    type: 'geojson',
-                    data: 'https://gis.tamu.edu/arcgis/rest/services/FCOR/TAMU_BaseMap/MapServer/19/query?where=1=1&outFields=*&f=geojson&&returnGeometry=true'
-                });
-
                 map.addLayer({
                     'id': 'Add-Road',
                     'type': 'line',
@@ -1760,9 +1740,78 @@
         });    
 
 // ------------------------------------------------------------------   
-//////等时圈加载
+//////异常图标显示加载
 
+        map.on('load', () => {
+                // Load an image from an external URL.
 
+            map.loadImage(
+                'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Warningfv3.png/240px-Warningfv3.png',
+                (error, image) => {
+                    if (error) throw error;
+
+                    // Add the image to the map style.
+                    map.addImage('warning', image);
+
+                    // Add a data source containing one point feature.
+                    map.addSource('point', {
+                        'type': 'geojson',
+                        'data': {
+                            'type': 'FeatureCollection',
+                            'features': [
+                                {
+                                    'type': 'Feature',
+                                    'geometry': {
+                                        'type': 'Point',
+                                        'coordinates': [-96.338343 , 30.608364]
+                                    }
+                                },
+                                {
+                                    'type': 'Feature',
+                                    'geometry': {
+                                        'type': 'Point',
+                                        'coordinates': [-96.357278 , 30.621942]
+                                    }
+                                },
+                                {
+                                    'type': 'Feature',
+                                    'geometry': {
+                                        'type': 'Point',
+                                        'coordinates': [-96.354012 , 30.601483]
+                                    }
+                                },
+                                {
+                                    'type': 'Feature',
+                                    'geometry': {
+                                        'type': 'Point',
+                                        'coordinates': [-96.339781 , 30.625352]
+                                    }
+                                },
+                                {
+                                    'type': 'Feature',
+                                    'geometry': {
+                                        'type': 'Point',
+                                        'coordinates': [-96.394716 , 30.598031]
+                                    }
+                                }
+                            ]
+                        }
+                    });
+                    document.getElementById('warnings').addEventListener('click', function() {
+                        // Add a layer to use the image to represent the data.
+                        map.addLayer({
+                            'id': 'warningpoints',
+                            'type': 'symbol',
+                            'source': 'point', // reference the data source
+                            'layout': {
+                                'icon-image': 'warning', // reference the image
+                                'icon-size': 0.25
+                            }
+                        });
+                    });   
+                
+                });        
+        });
 
 
 
