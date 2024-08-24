@@ -270,19 +270,19 @@ function zoomFull() {
     });
 }
 
-//放大
-function zoomOut() {
-    var zm = map.getZoom() + 1;
-    if (zm <20)
-        map.setZoom(zm);
-}
+// //放大
+// function zoomOut() {
+//     var zm = map.getZoom() + 1;
+//     if (zm <20)
+//         map.setZoom(zm);
+// }
 
-//缩小
-function zoomIn() {
-    var zm = map.getZoom() - 1;
-    if (zm > 4)
-        map.setZoom(zm);
-}
+// //缩小
+// function zoomIn() {
+//     var zm = map.getZoom() - 1;
+//     if (zm > 4)
+//         map.setZoom(zm);
+// }
 
 
 
