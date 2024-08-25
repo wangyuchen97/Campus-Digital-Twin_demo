@@ -190,7 +190,7 @@
                             </div>
                         </div>
                         <!--校园分区选择-->
-                        <div class="city_chose_box display_box" style="display: none">
+                        <!-- <div class="city_chose_box display_box" style="display: none">
                             <div class="display_type_center_box">
                                 <ul class="display_type_inner_box" id="ulCity">
                                     <li class="display_type_msg">Navigation Module</li>
@@ -206,7 +206,7 @@
                             <div class="display_type_funct_box">
                                 <span class="display_type_funct display_type_funct_sure">OK</span>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- 可持续性得分表的可视化
                         <div class="city_chose_box display_box" style="display: none">
                             <div class="display_type_center_box2">
@@ -285,7 +285,7 @@
                             <span class="map_tool" id= "Roadcon">
                                     <a class="map_tool_inner"  title="Road congestion"  style="background-position-x:-396px"></a>
                                 </span>
-                            <span class="map_tool">
+                            <span class="map_tool" id= "navigation">
                                     <a class="map_tool_inner city_chose_btn"  title="Navigation" style="background-position-x:-432px"></a>
                                 </span>
                             <span class="map_tool"id= "scorecard">
@@ -1431,9 +1431,35 @@
 
 <!-- Load the `mapbox-gl-geocoder` plugin. -->
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
-<link rel="stylesheet" href="css/geocoder.css" type="text/css">
+<link rel="stylesheet" href="css/geocodernew.css" type="text/css">
+<!-- Load the `mapbox-gl-direction` plugin. -->
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.3.1/mapbox-gl-directions.js"></script>
+<link rel="stylesheet" href="css/direction.css" type="text/css">
+
+<style>
+    .geocoder-dropdown-item {
+        padding: 5px;
+    }
+    .geocoder-dropdown-icon {
+        margin-right: 5px;
+    }
+    .geocoder-dropdown-text {
+        color: #5a3fc0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        font-weight: bold;
+    }
+    /* #geocoder {
+        position: absolute;
+        top:50px;
+        left:0px;
+        z-index: 1;
+    } */
+</style>
 
 <div id="map"></div>
+<!-- <div id="geocoder"></div> -->
+<!-- <div id="geocoder" style="position: absolute; top: 10px; left: 20px; z-index: 1;"></div> -->
 <script>
 	mapboxgl.accessToken = 'pk.eyJ1Ijoid2FuZ2NoZWVyIiwiYSI6ImNsemNldmg3dDBiYjUyam9hd3Y1eHcwM2UifQ.O4kBa2QHGIKhhv1XLXxdqA';
     const map = new mapboxgl.Map({
@@ -1449,10 +1475,22 @@
 
     // Add the control to the map.
     // 添加地图地点搜索框，搜索主要校园地点
-    // <div id="geocoder" style="position: absolute; top: 20px; left: 20px; z-index: 1;"></div>            
+    
     const geocoder = new MapboxGeocoder({
                 accessToken: mapboxgl.accessToken,
                 mapboxgl: mapboxgl,
+                types: 'poi',
+                // see https://docs.mapbox.com/api/search/#geocoding-response-object for information about the schema of each response feature
+                render: function (item) {
+                    // extract the item's maki icon or use a default
+                    const maki = item.properties.maki || 'marker';
+                    return `<div class='geocoder-dropdown-item'>
+                            <img class='geocoder-dropdown-icon' src='https://unpkg.com/@mapbox/maki@6.1.0/icons/${maki}-15.svg'>
+                            <span class='geocoder-dropdown-text'>
+                            ${item.text}
+                            </span>
+                        </div>`;
+                },
                 placeholder: 'Search for a place...',
                 language: 'en',
                 zoom: 13,
@@ -1468,7 +1506,7 @@
     document.getElementById('Searchaddress').addEventListener('click', function() {
         if (!geocoderAdded) {
             // 添加控件到地图的左上角
-            map.addControl(geocoder, 'top-left');
+            map.addControl(geocoder, 'bottom-left');
             geocoderAdded = true; // 更新状态为已添加
         } else {
             // 如果控件已经添加，则移除它
@@ -1478,6 +1516,33 @@
         
     });
 
+    // document.getElementById('geocoder-container').appendChild(geocoder.onAdd(map));
+// ------------------------------------------------------------------    
+    // 添加地图导航模块
+    const direction = new MapboxDirections({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl,
+            language: 'en',
+            proximity: {
+                    longitude: -96.355374,
+                    latitude: 30.606424
+                }
+    });
+
+    let directionAdded = false; 
+
+    document.getElementById('navigation').addEventListener('click', function() {
+        if (!directionAdded) {
+            // 添加控件到地图的左上角
+            map.addControl(direction, 'top-left');
+            directionAdded = true; // 更新状态为已添加
+        } else {
+            // 如果控件已经添加，则移除它
+            map.removeControl(direction);
+            directionAdded = false; // 更新状态为已移除
+        }
+        
+    }); 
 // ------------------------------------------------------------------    
     //放大功能
 

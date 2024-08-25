@@ -6,12 +6,9 @@
   box-sizing: border-box;
 }
 
-
 .mapboxgl-ctrl-geocoder {
-  font-size: 16px;
-  top: 30px;  /* 向下移动 */
-  left: 10px; /* 向右移动 */
-  line-height: 16px;
+  font-size: 18px;
+  line-height: 24px;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, Helvetica, sans-serif;
   position: relative;
   background-color: #fff;
@@ -123,7 +120,7 @@
   display: inline-block;
   vertical-align: middle;
   speak: none;
-  fill: #757575;
+  fill: transparent;
   top: 15px;
 }
 
@@ -231,6 +228,7 @@
 
   .mapboxgl-ctrl-geocoder--icon {
     top: 8px;
+    
   }
 
   .mapboxgl-ctrl-geocoder--icon-close {
